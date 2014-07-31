@@ -14,6 +14,12 @@ angular.module('bwChallengeApp')
     return alignment[num];
   }
 
+  function setRandomColumnSize() {
+    var column = [3, 4];
+    var num = (Math.floor(Math.random() * 2));
+    return column[num];
+  }
+
   function setSentimentTextColor(topic) {
     var fontColor = null;
     if (topic.sentimentScore < 40) {
@@ -54,6 +60,7 @@ angular.module('bwChallengeApp')
         obj = _.pick(input[i], 'label', 'volume', 'sentiment', 'sentimentScore');
         obj.relativeTextSize = setTextSize(input[i].volume, classSizePopularity);
         obj.randomAlignment = setRandomAlignment();
+        obj.randomColumnSize = setRandomColumnSize();
         obj.sentimentTextColor = setSentimentTextColor(input[i]);
 
         arr.push(obj);
