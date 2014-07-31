@@ -15,11 +15,23 @@
       <h3 class="panel-title">BW word cloud</h3>
     </div>
     <div class="panel-body">
-      <div ng-repeat="topic in preparedTopics">
-        <div class="col-sm-4 word" ng-style="setStyle(topic)">{{topic.label}}</div>
+      <div class="row">
+        <div class="col-sm-9">
+          <div ng-repeat="topic in preparedTopics">
+            <div class="col-sm-4 word" ng-style="setStyle(topic)" ng-click="showInfo(topic)">{{topic.label}}</div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <p>Information on topic {{currentTopic.label}}:</p>
+          <br>
+          <p>Total mentions: {{currentTopic.volume}}</p>
+          <br>
+          <p>Positive mentions: {{currentTopic.sentiment.positive}}</p>
+          <p>Neutral mentions: {{currentTopic.sentiment.neutral}}</p>
+          <p>Negative mentions: {{currentTopic.sentiment.negative}}</p>
+        </div>
       </div>
     </div>
-
   </div>
 </div>
 <div class="row">
