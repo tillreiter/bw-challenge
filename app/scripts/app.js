@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('bwChallengeApp', []);
+angular.module('bwChallengeApp', ['ngRoute']);
