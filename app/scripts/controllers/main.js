@@ -6,7 +6,7 @@ angular.module('bwChallengeApp')
 
     $scope.dataLoaded = false;
     $scope.currentTopic = {
-      label: "/ ",
+      label: "",
       volume: "/ ",
       sentiment: {
         positive: "/ ",

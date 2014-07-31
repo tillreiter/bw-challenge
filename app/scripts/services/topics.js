@@ -17,11 +17,11 @@ angular.module('bwChallengeApp')
   function setSentimentTextColor(topic) {
     var fontColor = null;
     if (topic.sentimentScore < 40) {
-      fontColor = "red";
+      fontColor = "#ff0124"; //red
     } else if (topic.sentimentScore > 60) {
-      fontColor = "green";
+      fontColor = "#33be2a";  //green
     } else {
-      fontColor = "grey";
+      fontColor = "#696969"; //grey
     }
     return fontColor
   }

@@ -22,13 +22,13 @@
           </div>
         </div>
         <div class="col-sm-3">
-          <p>Information on topic {{currentTopic.label}}:</p>
+          <p>Information on topic <span class="info">"{{currentTopic.label}}":</span></p>
           <br>
-          <p>Total mentions: {{currentTopic.volume}}</p>
+          <p>Total mentions: <span class="info">{{currentTopic.volume}}</span></p>
           <br>
-          <p>Positive mentions: {{currentTopic.sentiment.positive}}</p>
-          <p>Neutral mentions: {{currentTopic.sentiment.neutral}}</p>
-          <p>Negative mentions: {{currentTopic.sentiment.negative}}</p>
+          <p>Positive mentions: <span class="info" id="positive-number">{{currentTopic.sentiment.positive}}</span></p>
+          <p>Neutral mentions: <span class="info" id="neutral-number">{{currentTopic.sentiment.neutral}}</span></p>
+          <p>Negative mentions: <span class="info" id="negative-number">{{currentTopic.sentiment.negative}}</span></p>
         </div>
       </div>
     </div>
