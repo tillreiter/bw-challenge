@@ -5,11 +5,10 @@ angular.module('bwChallengeApp')
   //include Topics service in controller for data retrieval and preperation
   .controller('MainCtrl', function ($scope, Topics) {
 
-    //create variable to see when data is loaded and prepared for showing
-    //works with ng-if in html
+    //create variable to see when data is loaded and prepared for showing (binds with ng-if in html)
     $scope.dataReady = false;
 
-    //create empty current selected Topic object
+    //create empty current selected topic object
     $scope.currentTopic = {
       label: "",
       volume: "/ ",
@@ -26,8 +25,7 @@ angular.module('bwChallengeApp')
     };
 
 
-    //set styles for topics in cloud
-    //works with ng-style in html
+    //set styles for topics in cloud (works with ng-style in html)
     $scope.setStyle = function (topic) {
       return {'color': topic.sentimentTextColor, 'font-size': topic.popularityTextSize, 'text-align': topic.randomAlignment};
     };
@@ -40,5 +38,4 @@ angular.module('bwChallengeApp')
       console.log('preparing data finished');
       $scope.dataReady = true;
     });
-
   });
