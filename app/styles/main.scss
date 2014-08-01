@@ -47,23 +47,24 @@ body {
     }
 }
 
-.word {
-  margin: 0px;
-  word-wrap: break-word;
-  padding: 4px 2px;
-  line-height: 0.9em;
-}
+
+/* Minor custom stylings */
+/* ordered alphabetically */
 
 .info {
   font-weight: bold;
 }
 
-#positive-number {
-  color: #33be2a;
+#love {
+  margin-left: 2px;
+  margin-right: 19px;
+  height: 55px;
 }
+
 #negative-number {
   color: #ff0124;
 }
+
 #neutral-number {
   color: #696969;
 }
@@ -73,23 +74,27 @@ body {
   opacity: 0.5;
 }
 
+.png {
+  max-height: 70px;
+}
+
+#positive-number {
+  color: #33be2a;
+}
+
 #statement {
   max-height: 80px;
   margin-top: 20px;
   text-align: center;
 }
 
-.png {
-  max-height: 70px;
-}
-
-#love {
-  margin-left: 2px;
-  margin-right: 19px;
-  height: 55px;
-}
-
 #topics-panel {
   margin: 60px 15px;
 }
 
+.word {
+  margin: 0px;
+  word-wrap: break-word;
+  padding: 4px 2px;
+  line-height: 0.9em;
+}
