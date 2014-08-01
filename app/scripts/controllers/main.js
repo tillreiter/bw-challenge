@@ -1,10 +1,15 @@
 'use strict';
 
 angular.module('bwChallengeApp')
+
+  //include Topics service in controller for data retrieval and preperation
   .controller('MainCtrl', function ($scope, Topics) {
 
+    //create variable to see when data is loaded and prepared for showing
+    //works with ng-if in html
+    $scope.dataReady = false;
 
-    $scope.dataLoaded = false;
+    //create empty current selected Topic object
     $scope.currentTopic = {
       label: "",
       volume: "/ ",
@@ -15,22 +20,25 @@ angular.module('bwChallengeApp')
       }
     };
 
-    $scope.setStyle = function (topic) {
-      var popularityTextSize = 12 + (topic.relativeTextSize * 5);
-      return {'color': topic.sentimentTextColor, 'font-size': popularityTextSize, 'text-align': topic.randomAlignment};
-    };
-
+    //show info of selected topic
     $scope.showInfo = function (topic) {
       $scope.currentTopic = topic;
     };
 
-    Topics.getJSON().success(function (data) {
+
+    //set styles for topics in cloud
+    //works with ng-style in html
+    $scope.setStyle = function (topic) {
+      return {'color': topic.sentimentTextColor, 'font-size': topic.popularityTextSize, 'text-align': topic.randomAlignment};
+    };
+
+    //get topics JSON file via service and prepare for viewing
+    Topics.getJSON('./content/topics.json').success(function (data) {
       $scope.topics = data.topics;
       console.log('loading data finished');
       $scope.preparedTopics = Topics.prepare($scope.topics);
       console.log('preparing data finished');
-      $scope.dataLoaded = true;
+      $scope.dataReady = true;
     });
 
   });
-

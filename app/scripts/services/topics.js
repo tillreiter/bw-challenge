@@ -1,11 +1,11 @@
-//'use strict';
+'use strict';
 
 angular.module('bwChallengeApp')
 
   .factory('Topics', ['$http', function ($http) {
 
   function setTextSize(volume, classSizePopularity) {
-    return Math.floor(volume / classSizePopularity)
+    return (12 + (Math.floor(volume / classSizePopularity) * 5))
   }
 
   function setRandomAlignment() {
@@ -34,8 +34,8 @@ angular.module('bwChallengeApp')
 
   var methods = {
 
-    getJSON: function () {
-      return $http.get('./content/topics.json');
+    getJSON: function (path) {
+      return $http.get(path);
     },
 
     prepare: function (input) {
@@ -58,7 +58,7 @@ angular.module('bwChallengeApp')
       for (var i = 0; i < amountTopics; i++) {
         var obj = {};
         obj = _.pick(input[i], 'label', 'volume', 'sentiment', 'sentimentScore');
-        obj.relativeTextSize = setTextSize(input[i].volume, classSizePopularity);
+        obj.popularityTextSize = setTextSize(input[i].volume, classSizePopularity);
         obj.randomAlignment = setRandomAlignment();
         obj.randomColumnSize = setRandomColumnSize();
         obj.sentimentTextColor = setSentimentTextColor(input[i]);
