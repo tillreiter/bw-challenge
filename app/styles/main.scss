@@ -88,6 +88,9 @@ body {
 
 .word {
   margin: 0px;
+  word-wrap: break-word;
+  padding: 4px 2px;
+  line-height: 0.9em;
 }
 
 .info {
