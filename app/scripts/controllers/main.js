@@ -31,7 +31,7 @@ angular.module('bwChallengeApp')
     };
 
     //get topics JSON file via service and prepare for viewing
-    Topics.getJSON('./content/topics.json').success(function (data) {
+    Topics.getJSON('https://gist.githubusercontent.com/grahamscott/65b43572ad18c5fbdd87/raw/e259bbc254b2c00dca67bf2f6a7b98dd574c277c/topics.json').success(function (data) {
       $scope.topics = data.topics;
       console.log('loading data finished');
       $scope.preparedTopics = Topics.prepare($scope.topics);
